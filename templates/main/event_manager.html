@@ -1,0 +1,93 @@
+{% extends "wrapper.html" %}
+
+{% block title %} Модератор {% endblock %}
+
+{% block content %}
+    <div style = "margin-left: 20%;margin-right: 20%; margin-top: 50px;">
+  <div class="container">
+    <div class="main-body">
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                      {% load static %}
+                    <img src="{% static 'Кулаковский_Алексей_Елисеевич.jpg' %}" alt="profilepic" class="#" width="150">
+                    <div class="mt-3">
+                      <h4>Кулаковский А.Е.</h4>
+                      <p class="text-secondary mb-1">Администратор</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Имя</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{ user.first_name }} {{ user.last_name }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{user.email}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+              </div>
+              <div class="row gutters-sm">
+                <div class="col-sm-12">
+                  <div class="card h-100">
+
+                <div class="card-body">
+                      <h5 style = "margin: 10px;">Заявок на рассмотрении: <strong>{{ events.count }}</strong></h5>
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Имя</th>
+                            <th scope="col">Ивент/олимпиада</th>
+                            <th scope="col">Диплом</th>
+                            <th scope="col">Предполагаемое кол-во очков</th>
+                            <th score="col">Решение</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         {% for event in events %}
+                             <tr>
+                             <th scope="row">1</th>
+                                <td>{{ event.student.get_full_name }}</td>
+                                <td>{{event.title}}</td>
+                                <td><p><a href="81807fcroEL.jpg">Диплом</a></p></td>
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        <td><input type="text" class="form-control" name="cost" value="0" required></td>
+                                        <td><button type="submit" class="btn btn-success" name="Accept" value={{ event.id }}>Да</button>
+                                        <button type="submit" class="btn btn-danger" name="Deny" value={{ event.id }}>Нет</button></td>
+                                 </form>
+                             </tr>
+                         {% endfor %}
+
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

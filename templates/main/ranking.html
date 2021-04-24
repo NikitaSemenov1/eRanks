@@ -1,0 +1,38 @@
+{% extends "wrapper.html" %}
+
+{% block title %}
+    eRanks
+{% endblock %}
+
+{% block content %}
+
+    <div style="margin:100px;">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">ФИО</th>
+          <th scope="col">ВУЗ</th>
+          <th scope="col">Факультет</th>
+          <th scope="col">Курс</th>
+          <th scope="col"> Очки </th>
+          <th scope="col">Детали</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for student in students %}
+          <tr><th scope="row"></th>
+              <td>{{ student.name1 }} {{ student.name2 }} {{ student.name3 }}</td>
+              <td>{{ student.university }}</td>
+              <td>{{ student.department }}</td>
+              <td>{{ student.course }}</td>
+              <td>{{ student.score }}</td>
+
+                <td><p><a href={% url 'profile' username=student.username %}>Подробнее</a></p></td>
+          </tr>
+
+    {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

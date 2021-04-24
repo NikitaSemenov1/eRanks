@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <!-- CSS only -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <title>Личный кабинет</title>
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+    <link href="main.css" rel="stylesheet">
+    <script src="javascript.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-light" style = "background-color:#1832c9;">
+    <div class="container-fluid">
+      <img class="navbar-brand text-white" src="logo_white1.png" style="width:120px;" alt="лого">
+      <form class="d-flex">
+        <a class="nav-link active text-white" style = "margin: 4px;">Студент: Короткевич Г.В.</a>
+        <a class="nav-link active text-white" href="userindex.html" style = "margin: 4px;">Рейтинг</a>
+        <div><button type = "button" onclick="location.href='user.html'" class="btn btn-warning" style = "margin: 4px;"><h style="color:white;">Личный кабинет</h></button></div>
+      </form>
+    </div>
+  </nav>
+  <div style = "margin-left: 20%;margin-right: 20%; margin-top: 50px;">
+  <div class="container">
+    <div class="main-body">
+      <div class="row gutters-sm">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex flex-column align-items-center text-center">
+                <img src="Korotkevich_ITMO.jpg" alt="profilepic" class="" width="150">
+                <div class="mt-3">
+                  <h4>Короткевич Г.В.</h4>
+                  <p class="text-secondary mb-1">5 курс, ИТМО</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+        <div class="col-md-8">
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Имя</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  Короткевич Геннадий Викторович
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Email</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  jo@pa.oao
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div><h5>Рейтинг: 1 место</h5> <h4>2598 очко(-в)</h4></div>
+              </div>
+            </div>
+          </div>
+          </div>
+          </div>
+          <div class = "row gutters-sm">
+            <div class="col-sm-12" style="margin-bottom: 10px;">
+              <div class="card h-100">
+            <div class="card-body">
+                  <h5 style = "margin: 10px;">Внесение достижения/олимпиады/ивента</h5>
+                  <div class="container">
+                    <form enctype="multipart/form-data" method="post">
+                      <p>Загрузите ваш диплом &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        &nbsp&nbsp&nbsp&nbsp
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Название олимпиады/ивента</p>
+                      <p><input type="file" name="diploma">
+                      <input type="text" name="nameming">
+                     </p>
+                     <button type="button" class = "btn btn-warning" >Отправить</button> 
+                    </form> 
+                  </div>
+                </div>
+                </div>  
+            </div>
+            <div class="col-sm-12" style="margin-top: 7px;">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 style = "margin: 10px;">Достижения студента</h5>
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Ивент/олимпиада</th>
+                          <th scope="col">Кол-во очков</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>субботник</td>
+                          <td>234</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>icpc</td>
+                          <td>2340</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>субботник</td>
+                          <td>24</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+</div>  
+</div>
+</div>
+</body>
+</html>
