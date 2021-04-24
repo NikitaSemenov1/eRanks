@@ -1,6 +1,6 @@
 {% extends "wrapper.html" %}
 
-{% block title %} <title>Регистрация</title> {% endblock %}
+{% block title %}Регистрация{% endblock %}
 
 {% block content %}
       <div style="margin:100px;">
@@ -20,7 +20,7 @@
         <div class="col-md-14 inputGroupContainer">
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input  name="name1" placeholder="Фамилия" class="form-control"  type="text" required>
+            <input  name="name1" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@
           <div class="col-md-14  inputGroupContainer">
           <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input name="name2" placeholder="Имя" class="form-control"  type="text" required>
+        <input name="name2" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -39,16 +39,25 @@
           <div class="col-md-14  inputGroupContainer">
           <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input name="name3" placeholder="Отчество" class="form-control"  type="text" required>
+        <input name="name3" class="form-control"  type="text" required>
               </div>
           </div>
+            <div class="form-group">
+        <label class="col-md-4 control-label" style="margin:7px;">Email</label>
+          <div class="col-md-14  inputGroupContainer">
+          <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input name="email" class="form-control"  type="email" required>
+          </div>
+        </div>
+      </div>
         </div>
         <div class="form-group">
         <label class="col-md-4 control-label" style="margin:7px;">Университет</label>
           <div class="col-md-14  inputGroupContainer">
           <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input name="university" placeholder="Университет" class="form-control"  type="text" required>
+        <input name="university" class="form-control"  type="text" required>
           </div>
         </div>
       </div>
@@ -57,7 +66,7 @@
           <div class="col-md-14  inputGroupContainer">
           <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input name="department" placeholder="Факультет" class="form-control"  type="text" required>
+        <input name="department" class="form-control"  type="text" required>
 
           </div>
         </div>
@@ -86,7 +95,7 @@
             <div class="col-md-14 inputGroupContainer">
             <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input  name="username" placeholder="Логин" class="form-control"  type="text" required>
+            <input  name="username"  class="form-control"  type="text" required>
               </div>
             </div>
           </div>
@@ -97,7 +106,7 @@
               <div class="col-md-14 inputGroupContainer">
               <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input name="password1" placeholder="Пароль" class="form-control"  type="password" required>
+            <input name="password1" class="form-control"  type="password" required>
 
               </div>
             </div>
@@ -110,7 +119,7 @@
               <div class="col-md-14 inputGroupContainer">
               <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input name="password2" placeholder="Повторите пароль" class="form-control"  type="password" required>
+            <input name="password2" class="form-control"  type="password" required>
               </div>
             </div>
           </div>

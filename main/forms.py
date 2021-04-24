@@ -6,13 +6,13 @@ from .models import Student, Employer
 class CreateStudentForm(UserCreationForm):
     class Meta:
         model = Student
-        fields = {'username', 'password1', 'password2', 'name1', 'name2', 'name3', 'university', 'department', 'course'}
+        fields = {'username', 'email', 'password1', 'password2', 'name1', 'name2', 'name3', 'university', 'department', 'course'}
 
 
 class CreateEmployerForm(UserCreationForm):
     class Meta:
         model = Employer
-        fields = {'username', 'password1', 'password2', 'name1', 'name2', 'name3', 'organization', 'position'}
+        fields = {'username', 'email', 'password1', 'password2', 'name1', 'name2', 'name3', 'organization', 'position'}
 
 
 class UploadFileForm(forms.Form):

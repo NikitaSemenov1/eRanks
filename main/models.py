@@ -66,3 +66,6 @@ class Event(models.Model):
     def set_cost(self, cost):
         self.cost = cost
         self.save()
+
+    def __str__(self):
+        return "%s by %s" % (self.title, self.student.get_short_name())

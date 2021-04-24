@@ -47,8 +47,7 @@ def student_signup_page(request):
             form.save()
             return redirect('student_signup')
         else:
-            print(form.cleaned_data)
-            messages.error(request, form.error_messages)
+            messages.error(request, form.errors)
 
     return render(request, "registration/student_signup.html")
 
@@ -62,8 +61,7 @@ def employer_signup_page(request):
             form.save()
             return redirect('employer_signup')
         else:
-            print(form.cleaned_data)
-            messages.error(request, form.error_messages)
+            messages.error(request, form.errors)
 
     return render(request, "registration/employer_signup.html")
 
@@ -93,6 +91,7 @@ def logout_user(request):
 @login_required(login_url='login')
 def profile(request, username):
     return render(request, 'main/profile.html', context={
-        'events': Event.objects.filter(student__username=request.user.username, is_accepted=True),
-        'username': username
+        'events': Event.objects.filter(student__username=username, is_accepted=True),
+        'username': username,
+        'student': Student.objects.get(username=username)
     })
