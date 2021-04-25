@@ -2,8 +2,11 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.urls import reverse
+
 from .models import Student, Event
-from .forms import CreateStudentForm, CreateEmployerForm
+from .forms import CreateStudentForm, CreateEmployerForm, UploadFileForm
+import os
 
 
 def index(request):
@@ -11,9 +14,40 @@ def index(request):
 
 
 def ranking_page(request):
+
     return render(request, "main/ranking.html", context={
         'students': Student.objects.all().order_by("-score")
     })
+
+
+def handle_uploaded_file(f):
+    with open('', 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
+
+
+@login_required(login_url='login')
+def upload_file(request):
+    if not hasattr(request.user, 'student'):
+        return redirect('index')
+    if request.method == 'POST':
+        form = UploadFileForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            title = request.POST.get('event_title')
+            event = Event(student=request.user.student, title=title)
+            event.save()
+            ext = os.path.splitext(str(request.FILES['file']))[1]
+            destination = 'main/static/files/diploma_%s_%s%s' % (str(request.user.username), str(event.id), ext)
+
+            for chunk in request.FILES['file'].chunks():
+                open(destination, 'wb+').write(chunk)
+
+            event.diploma = destination
+            event.save()
+        else:
+            messages.error(request, form.errors)
+    return redirect(reverse('profile', kwargs={'username': request.user.username}))
 
 
 @login_required(login_url='login')

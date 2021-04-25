@@ -1,8 +1,23 @@
-body{
-}
+
 p, h1, h2, h3, h4, h5, h6, a,
 td, div, th{
   font-family: Noto Sans;
+}
+.btn-secondary, .btn-secondary:hover, .btn-secondary::before, .btn-secondary::after,
+.btn-secondary:target, .btn-secondary:focus{
+  background-color: #6a8e7f;
+  border-color: #6a8e7f;
+  border-radius: 11px;
+}
+.btn{
+  border-radius: 11px;
+}
+.card{
+  border-radius: 30px;
+}
+.jopa {
+	padding: 0 10px;
+	background: rgba(0, 0, 0, 0.8);
 }
 .logodiv {
   border-radius: 2;

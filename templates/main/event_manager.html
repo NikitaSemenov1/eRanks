@@ -69,7 +69,7 @@
                              <th scope="row">1</th>
                                 <td><a href={% url 'profile' username=event.student.username %}>{{ event.student.get_full_name }}</a></td>
                                 <td>{{event.title}}</td>
-                                <td><p><a href="81807fcroEL.jpg">Диплом</a></p></td>
+                                <td><p><a href="{{ event.diploma }}">Диплом</a></p></td>
                                     <form method="post">
                                         {% csrf_token %}
                                         <td><input type="text" class="form-control" name="cost" value="0" required></td>

@@ -86,18 +86,23 @@
             <div class="card-body">
                   <h5 style = "margin: 10px;">Внесение достижения/олимпиады/ивента</h5>
                   <div class="container">
-                    <form enctype="multipart/form-data" method="post">
+                    <form enctype="multipart/form-data" method="post" action="{% url 'upload_file' %}">
                         {% csrf_token %}
                         <div class="col-sm-9 text-secondary">
                       <p>Загрузите ваш диплом &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                         &nbsp&nbsp&nbsp&nbsp
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Название олимпиады/ивента</p>
-                      <p><input type="file" name="event_file">
-                      <input type="text" name="event_title">
+                      <p>
+                          <input type="file" name="file" accept="image/*" required>
+                          <input type="text" name="event_title" required>
                      </p>
-                     <button type="button" class = "btn btn-warning" >Отправить</button>
+                     <button type="submit" class = "btn btn-warning">Отправить</button>
                         </div>
+
+        {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
                     </form>
                   </div>
                 </div>

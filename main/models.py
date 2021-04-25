@@ -54,6 +54,7 @@ class Event(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     title = models.CharField(max_length=64, default='VSEROS')
     cost = models.IntegerField(default=0)
+    diploma = models.CharField(max_length=64, default='main/static/files/default_file.jpg')
 
     def accept(self):
         self.is_accepted = True
