@@ -4,5 +4,103 @@
     eRanks
 {% endblock %}
 {% block content %}
+    <div style="margin:7%;">
+    <div class="container">
+        {% load static %}
+        <div class="card h-100" style="border-radius: 30px;margin-left: 100px; margin-right: 100px; background: url({% static 'backf.png' %}) no-repeat;-webkit-background-size: 100%;">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm">
+                <div style="margin:40px;color:black;">
+                  <h1 style="font-weight: 500; font-family: 'Roboto';">
+                    Нанимайте стажеров<br>
+                    или находите<br>
+                    работодателей в один<br>
+                    клик с <a style="color: rgb(110,92,44);font-weight: 700; font-family: 'Roboto';">eRanks</a>
+                  </h1>
+                </div>
+              </div>
+              <div class="col-sm">
+                <!-- <img src="jbge.svg" style="width: 400px; margin-left: 10px;"> -->
+              </div>
+        </div>
+      </div>
+      </div>
+  </div>
+  <br><hr><br>
+  <div class="row gutters-sm" style="margin-left: 100px; margin-right: 100px">
+    <!-- <div class="col-md-4">
+      <div class="card" style="background: #FAC456 no-repeat;-webkit-background-size: 100%;">
+        <div class="card-body">
+          <div style="margin:40px;">
+            <h2 style="color: white;"><span class="#a">Как работает <strong>eRanks</strong></span></h2>
+          </div>
+          <div style="margin:40px;">
+            <h1 style="color: white;"><strong><span class="№">Мероприятия, олимпиады и различные ивенты. <br>eRank объединяет все эти активности и объективно оценивает каждую из них.
+              Основываясь на этих данных, он строит рейтинг студентов из различных вузов.</span></strong></h1>
+          </div>
+        </div>
+      </div>
 
+    </div> -->
+    <div class="col-md-8" style="margin-left: auto;
+    margin-right: 0;">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card" style="background: rgb(253,242,218) no-repeat;-webkit-background-size: 100%;border-radius: 30px;">
+              <div class="card-body">
+                <div style="margin:40px;">
+                  <h2 style="font-family: 'Roboto'; color:rgb(54,43,19)"><span>Как работает <strong>eRanks</strong></span></h2>
+                </div>
+                <div style="margin:40px;">
+                  <h5 style="color:rgb(83,72,48)"><span>Мероприятия, олимпиады и различные ивенты. <br>eRank объединяет все эти активности и объективно <br>оценивает каждую из них.
+                    Основываясь на этих данных, <br>он строит рейтинг студентов из различных вузов.</span></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card" style="background: rgb(253,242,218) no-repeat;-webkit-background-size: 100%;border-radius: 30px;">
+              <div class="card-body">
+                <div style="margin:40px;">
+                  <h2 style="font-family: 'Roboto'; color:rgb(54,43,19)"><span>Зарегистрировано студентов:</span></h2>
+                </div>
+                <div style="margin-left:40px; margin-bottom: 64px;">
+                  <br>
+                  <h1 style="color:rgb(83,72,48);font-weight: 900; font-family: 'Roboto';"><span>{{ student_count }}</span></h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card" style="background: rgb(253,242,218) no-repeat;-webkit-background-size: 100%;border-radius: 30px;">
+              <div class="card-body">
+                <div style="margin:40px;">
+                  <h2 style="font-family: 'Roboto'; color:rgb(54,43,19)"><span>Работодателей:</span></h2>
+                </div>
+                <div style="margin-left:40px; margin-bottom: 64px;">
+                  <br>
+                  <h1 style="color:rgb(83,72,48);font-weight: 900; font-family: 'Roboto';"><span>{{ employer_count }}</span></h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      </div>
+    </div>
 {% endblock %}

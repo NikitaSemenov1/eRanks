@@ -70,3 +70,4 @@ class Event(models.Model):
 
     def __str__(self):
         return "%s by %s" % (self.title, self.student.get_short_name())
+

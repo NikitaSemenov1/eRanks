@@ -59,26 +59,27 @@
                             <th scope="col">Имя</th>
                             <th scope="col">Ивент/олимпиада</th>
                             <th scope="col">Диплом</th>
-                            <th scope="col">Предполагаемое кол-во очков</th>
-                            <th score="col">Решение</th>
+                            <th scope="col">Кол-во очков</th>
+                            <th score="col">Решение
+                            </th>
                           </tr>
                         </thead>
                         <tbody>
                          {% for event in events %}
                              <tr>
-                             <th scope="row">1</th>
-                                <td><a href={% url 'profile' username=event.student.username %}>{{ event.student.get_full_name }}</a></td>
+                             <th scope="row"></th>
+                                <td><a href={% url 'profile' username=event.student.username %}>{{ event.student.get_short_name }}</a></td>
                                 <td>{{event.title}}</td>
                                 <td><p><a href="{{ event.diploma }}">Диплом</a></p></td>
                                     <form method="post">
                                         {% csrf_token %}
                                         <td><input type="text" class="form-control" name="cost" value="0" required></td>
-                                        <td><button type="submit" class="btn btn-success" name="Accept" value={{ event.id }}>Да</button>
-                                        <button type="submit" class="btn btn-danger" name="Deny" value={{ event.id }}>Нет</button></td>
+                                        <td><div class="d-flex">
+                                            <button type="submit" class="btn btn-secondary" style = "border-radius: 11px; margin:4px;" name="Accept" value={{ event.id }}>Принять</button>
+                                        <button type="submit" class="btn btn-outline-warning" style = "border-radius: 11px; margin:4px;"   name="Deny" value={{ event.id }}>Отказать</button></div></td>
                                  </form>
                              </tr>
                          {% endfor %}
-
                         </tbody>
                       </table>
                     </div>

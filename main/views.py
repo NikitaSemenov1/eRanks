@@ -4,17 +4,22 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.urls import reverse
 
-from .models import Student, Event
+from .models import Student, Event, Employer
 from .forms import CreateStudentForm, CreateEmployerForm, UploadFileForm
 import os
 
 
 def index(request):
-    return render(request, "main/index.html")
+    return render(request, "main/index.html", context={
+        'student_count': Student.objects.count,
+        'employer_count': Employer.objects.count
+    })
 
 
+@login_required(login_url='login')
 def ranking_page(request):
-
+    if hasattr(request.user, 'student'):
+        return redirect('index')
     return render(request, "main/ranking.html", context={
         'students': Student.objects.all().order_by("-score")
     })
@@ -69,7 +74,7 @@ def event_management(request):
             Event.objects.get(id=request.POST.get('Deny')).deny()
 
     return render(request, "main/event_manager.html", context={
-        'events': Event.objects.filter(is_denied=False, is_accepted=False)
+        'events': Event.objects.filter(is_denied=False, is_accepted=False).order_by('-id')
     })
 
 

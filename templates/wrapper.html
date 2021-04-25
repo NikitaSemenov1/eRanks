@@ -16,14 +16,15 @@
     <!-- <script src="javascript.js"></script> -->
 </head>
 <body>
-    <nav class="navbar navbar-light" style = "background-color:#1832c9;">
+    <nav class="navbar navbar-light" style = "background-color:rgb(91,110,236);">
     <div class="container-fluid">
-      <a href = {% url 'index' %}><img class="navbar-brand text-white" src="{% static 'logo_white1.png' %}" style="width:120px;" alt="лого">
+      <a href = {% url 'index' %}><img class="navbar-brand text-white" src="{% static 'logo_white1.png' %}" style="width:120px; margin: 5px;" alt="лого">
       </a>
           <form class="d-flex">
         {% if user.is_authenticated %}
             {% if user.is_staff %}
                 <a class="nav-link active text-white" style = "margin: 4px;"> <strong>Администратор:</strong> {{ user.first_name }} {{ user.last_name }}</a>
+                <a class="nav-link active text-white" href="{% url 'ranking' %}" style = "margin: 4px;"><strong>Рейтинг</strong></a>
             {% elif user.student%}
 
                 <a class="nav-link active text-white" style = "margin: 4px;">
@@ -36,10 +37,12 @@
                     <strong>Работодатель:</strong>
                     {{ user.employer.get_short_name }}
                 </a>
-            {% endif %}
-        <a class="nav-link active text-white" href="{% url 'ranking' %}" style = "margin: 4px;">Рейтинг</a>
+                <a class="nav-link active text-white" href="{% url 'ranking' %}" style = "margin: 4px;"><strong>Рейтинг</strong></a>
 
-                <div><button type = "button" onclick="location.href='{% url 'logout' %}'" class="btn btn-primary" style = "margin: 4px;"><h style="color:white;">Выйти</h></button></div>
+            {% endif %}
+
+
+                <div><button type = "button" onclick="location.href='{% url 'logout' %}'" class="btn btn-warning" style = "margin: 4px;"><h style="color:white;">Выйти</h></button></div>
                 {% if user.is_staff %}
                     <div><button type = "button" onclick="location.href='{% url 'event-management' %}'" class="btn btn-warning" style = "margin: 4px;"><h style="color:white;">Рассмотрение заявок</h></button></div>
 
@@ -47,14 +50,15 @@
                     <div><button type = "button" onclick="location.href='{% url 'profile' username=user.username %}'" class="btn btn-warning" style = "margin: 4px;"><h style="color:white;">Личный кабинет</h></button></div>
                 {% endif %}
             {% else %}
-          <div><button type = "button" onclick="location.href='{% url 'login' %}'" class="btn btn-primary" style = "margin: 4px;"><h style="color:white;">Войти</h></button></div>
-                <div><button type = "button"  onclick="location.href='{% url 'student_signup' %}'" class = "btn btn-primary" style = "margin: 4px;"><h style="color:white;">Регистрация для студента</h></button></div>
-                <div><button type = "button"  onclick="location.href='{% url 'employer_signup' %}'" class = "btn btn-primary" style = "margin: 4px;"><h style="color:white;">Регистрация для работодателя</h></button></div>
+          <div><button type = "button" onclick="location.href='{% url 'login' %}'" class="btn btn-warning" style = "margin: 4px;"><h style="color:white;">Войти</h></button></div>
+                <div><button type = "button"  onclick="location.href='{% url 'student_signup' %}'" class="btn btn-warning" style = "margin: 4px;"><h style="color:white;">Регистрация для студента</h></button></div>
+                <div><button type = "button"  onclick="location.href='{% url 'employer_signup' %}'" class="btn btn-warning" style = "margin: 4px;"><h style="color:white;">Регистрация для работодателя</h></button></div>
 
             {% endif %}
       </form>
     </div>
   </nav>
+
 {% block content %}
 
 {% endblock %}
